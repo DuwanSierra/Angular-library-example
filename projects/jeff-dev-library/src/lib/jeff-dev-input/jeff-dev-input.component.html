@@ -1,0 +1,32 @@
+<div class="jeff-dev-input">
+    <div class="p-field" [ngClass]="{'input-disabled':disabled}">
+        <label *ngIf="label" for="{{myId}}" class="input-label">
+            {{label}}
+        </label>
+        <div class="input-container">
+
+            <span class="container-field {{leftIcon ? 'p-input-icon-left': 'p-input-icon-right'}}">
+                <i 
+                 class="{{rigthIcon || leftIcon}}"
+                 *ngIf="rigthIcon || leftIcon"
+                 (click)="sendIconClick()"
+                ></i>
+                <input 
+                    id="{{myId}}" 
+                    [disabled]="disabled" 
+                    [placeholder]="placeholder" 
+                    [(ngModel)]="value"
+                    class="input-field" 
+                    type="{{type}}" 
+                    [attr.aria-describedby]="myId+'-help'"
+                    pInputText />
+            </span>
+
+            
+        </div>
+
+        <small *ngIf="helpText" id="{{myId}}-help" class="input-help">
+            {{helpText}}
+        </small>
+    </div>
+</div>

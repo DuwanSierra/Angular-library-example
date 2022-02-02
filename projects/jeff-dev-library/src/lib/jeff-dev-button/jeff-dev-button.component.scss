@@ -1,0 +1,63 @@
+@import "../../../assets/styles/variables.scss";
+@import "../../../assets/styles/utils.scss";
+
+.jeff-dev-button {
+    padding: 20px;
+    ::ng-deep {
+        .dev-button-override {
+            background-color: $lg-primary-color-1;
+            width: 100%;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 19px;
+            border: none;
+            border-radius: 4px;
+            color: $lg-base-color-1;
+            &.primary-error {
+                background-color: $lg-error-color-1;
+            }
+            &.primary-success {
+                background-color: $lg-success-color-1;
+            }
+            &.primary-contrast {
+                background-color: $lg-text-color-1;
+            }
+            &.secondary {
+                background-color: $lg-base-color-2;
+                color: $lg-primary-color-1;
+                &-error {
+                    background-color: $lg-base-color-2;
+                    color: $lg-error-color-1;
+                }
+                &-success {
+                    background-color: $lg-base-color-2;
+                    color: $lg-success-color-1;
+                }
+                &-contrast {
+                    background-color: $lg-base-color-2;
+                    color: $lg-text-color-1;
+                }
+            }
+            &.tertiary {
+                background-color: transparent;
+                color: $lg-primary-color-1;
+                &-error {
+                    background-color: transparent;
+                    color: $lg-error-color-1;
+                }
+                &-success {
+                    background-color: transparent;
+                    color: $lg-success-color-1;
+                }
+                &-contrast {
+                    background-color: transparent;
+                    color: $lg-text-color-1;
+                }
+            }
+        }
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}

@@ -8,6 +8,12 @@
     "strict": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "jeff-dev-library": [
+        "dist/jeff-dev-library/jeff-dev-library",
+        "dist/jeff-dev-library"
+      ]
+    },
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,

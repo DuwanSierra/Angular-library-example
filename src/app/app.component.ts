@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'jeff-dev-lib';
+
+
+  iconClick(message: string){
+    console.log(message);
+  }
 }

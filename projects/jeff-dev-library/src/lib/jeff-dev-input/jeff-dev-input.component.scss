@@ -1,0 +1,67 @@
+@import "../../../assets/styles/variables.scss";
+@import "../../../assets/styles/utils.scss";
+.jeff-dev-input {
+    .p-field {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        .input-label {
+            color: $lg-text-color-2;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            &.error {
+                color: $lg-error-color-1;
+            }
+        }
+        .input-container {
+            width: 100%;
+            .container-field {
+                width: 100%;
+                .input-field {
+                    width: 100%;
+                    background-color: $lg-shade-color-10;
+                    border: none;
+                    border-radius: 4px;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 22px;
+                    opacity: 1;
+
+                    &:focus {
+                        outline: 0 none;
+                        outline-offset: 0;
+                        box-shadow: 0 0 0 0.14rem $lg-primary-color-2;
+                    }
+                    &::placeholder,
+                    &::-webkit-input-placeholder {
+                        color: $lg-text-color-3;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 22px;
+                    }
+                    &.error {
+                        box-shadow: 0 0 0 0.14rem $lg-error-color-1;
+                        @include background-opacity($lg-error-color-1, 0.1);
+                    }
+                }
+            }
+        }
+        .input-help {
+            color: $lg-text-color-2;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 13px;
+            line-height: 122%;
+            &.error {
+                color: $lg-error-color-2;
+            }
+        }
+        &.input-disabled {
+            opacity: 0.5;
+        }
+    }
+}

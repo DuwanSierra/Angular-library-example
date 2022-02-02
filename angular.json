@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "4712c96d-2864-49de-96d3-856bb3106e51"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -27,7 +30,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss",
+              "node_modules/primeng/resources/themes/saga-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeflex/primeflex.css",
+              "projects/jeff-dev-library/assets/styles/variables.scss",
+              "projects/jeff-dev-library/assets/styles/styles.scss",
+              "projects/jeff-dev-library/assets/styles/fonts.scss",
+              "projects/jeff-dev-library/assets/styles/utils.scss"
             ],
             "scripts": []
           },
@@ -100,6 +111,42 @@
           }
         }
       }
+    },
+    "jeff-dev-library": {
+      "projectType": "library",
+      "root": "projects/jeff-dev-library",
+      "sourceRoot": "projects/jeff-dev-library/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/jeff-dev-library/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/jeff-dev-library/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/jeff-dev-library/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/jeff-dev-library/src/test.ts",
+            "tsConfig": "projects/jeff-dev-library/tsconfig.spec.json",
+            "karmaConfig": "projects/jeff-dev-library/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
     }
   },
   "defaultProject": "jeff-dev-lib"
